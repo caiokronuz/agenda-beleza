@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        backgroundColor: '#600000',
+        backgroundColor: '#ffdb00',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     },
 
     btn:{
-        backgroundColor: '#009800',
+        backgroundColor: '#000000',
         width: '90%',
         height: 45,
         alignItems: 'center',
