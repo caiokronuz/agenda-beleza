@@ -1,6 +1,6 @@
 import { RectButton } from 'react-native-gesture-handler';
 import React from 'react';
-import { Text, View, Image} from 'react-native';
+import { Text, View, Image, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import styles from './styles';
@@ -17,11 +17,15 @@ function LandingPage(){
         navigate('LoginPage');
     }
 
+    function handleNavigatetoLandingCompany(){
+        navigate('LandingCompany')
+    }
+
     return(
         <View style={styles.container}>
             <View style={styles.logo}>
                 <Image style={styles.imageLogo} source={Logo}/>
-                <Text>Seja Bem-vindo</Text> 
+                <Text>Sua nova forma de ser atendido com segurança!</Text> 
             </View>
 
             <View style={styles.userArea}>
@@ -32,10 +36,12 @@ function LandingPage(){
                 <RectButton style={styles.button} onPress={handleNavigateToRegister}>
                     <Text style={styles.buttonText}>Cadastrar</Text>
                 </RectButton>
-            </View>
 
-            <View>
-                <Text>Esqueceu a senha ?</Text>
+                <View>
+                    <TouchableOpacity onPress={handleNavigatetoLandingCompany}>
+                        <Text>Você possui um salão? Clique aqui!</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </View>
     )

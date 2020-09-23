@@ -34,6 +34,13 @@ function RegisterPage(){
                     onChange={()=>{}}
                 />
 
+                <TextInput
+                    style = {styles.input}
+                    placeholder = "Telefone"
+                    autoCorrect={false}
+                    onChange={()=>{}}
+                />
+
                 <TextInput 
                     style = {styles.input}
                     placeholder = "Data de Nascimento"

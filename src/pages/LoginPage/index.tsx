@@ -1,4 +1,5 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native'
 
 import {View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Image} from 'react-native';
 
@@ -8,6 +9,12 @@ import styles from './styles';
 import logoImg from '../../assets/images/logo.png'
 
 function LoginPage(){
+    const {navigate} = useNavigation();
+
+    function handleNavigatetoResetPage(){
+        navigate('ResetPassPage')
+    }
+
     return(
         <KeyboardAvoidingView style={styles.container}>
 
@@ -36,7 +43,13 @@ function LoginPage(){
                     <Text style = {styles.btnText}>Acessar</Text>
                 </TouchableOpacity>
 
+                <View>
+                    <TouchableOpacity onPress={handleNavigatetoResetPage}>
+                        <Text>Esqueceu a senha? Clique aqui!</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
+
         </KeyboardAvoidingView>
     )
 }
