@@ -6,7 +6,7 @@ import {View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Image} fr
 import styles from './styles';
 
 
-import logoImg from '../../assets/images/logo.png'
+import logoImg from '../../../assets/images/logo.png';
 
 function LoginPage(){
     const {navigate} = useNavigation();

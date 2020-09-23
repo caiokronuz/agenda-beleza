@@ -4,8 +4,7 @@ import { Text, View, Image, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import styles from './styles';
-import Logo from '../../assets/images/logo.png';
-
+import Logo from '../../../assets/images/logo.png';
 function LandingPage(){
     const {navigate} = useNavigation();
 

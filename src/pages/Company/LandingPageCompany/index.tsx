@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native'
 import { Text, View, Image } from 'react-native';
 
-import Logo from '../../assets/images/logo.png';
+import Logo from '../../../assets/images/logo.png';
 import styles from './styles';
 
 function LandingPageCompany(){
@@ -15,7 +15,7 @@ function LandingPageCompany(){
     }
 
     function handleNavigateToRegisterCompany(){
-        //navigate('')
+        navigate('RegisterCompany');
     }
 
     return(

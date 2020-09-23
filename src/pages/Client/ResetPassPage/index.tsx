@@ -3,7 +3,7 @@ import React from 'react';
 import {View, Text, Image} from 'react-native';
 
 import styles from './styles';
-import Logo from '../../assets/images/logo.png';
+import Logo from '../../../assets/images/logo.png';
 
 function ResetPassPage(){
     return(
