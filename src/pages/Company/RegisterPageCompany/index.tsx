@@ -10,6 +10,7 @@ function RegisterPageCompany(){
 
             <View style = {styles.logo}> 
                 <Image style = {styles.imageLogo} source={Logo}/>
+                <Text style = {styles.text} >Cadastre seu salão!</Text>
             </View>
 
             <View style={styles.Registrar}>

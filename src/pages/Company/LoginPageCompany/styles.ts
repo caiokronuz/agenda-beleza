@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native'
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
     container:{
@@ -8,31 +8,31 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 
-    imageLogo: {
-        width: 300,
-        height: 70,
+    logo:{
+        marginTop: '18%',
     },
 
     text:{
-        textAlign:'center',
+        textAlign: 'center',
     },
 
-    logo: {
-        marginTop: '18%'
+    logoimg:{
+        width: 300,
+        height: 70
     },
 
-    Registrar: {
-        flex:1,
-        alignItems:'center',
-        justifyContent:'center',
-        width:'90%',
+    login:{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '90%',
     },
 
     input:{
         backgroundColor: '#fff',
-        width:'90%',
+        width: '90%',
         height: 45,
-        marginBottom:15,
+        marginBottom: 15,
         color: '#222',
         fontSize: 17,
         borderRadius: 7,
@@ -45,12 +45,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 7,
-
     },
+
     btnText: {
         color: '#fff',
         fontSize: 18,
-    },
+    }
+
+
 })
 
-export default styles
+export default styles;

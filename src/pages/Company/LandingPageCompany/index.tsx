@@ -11,7 +11,7 @@ function LandingPageCompany(){
     const { navigate } = useNavigation();
 
     function handleNavigateToLoginCompany(){
-        //navigate('')
+        navigate('LoginCompany');
     }
 
     function handleNavigateToRegisterCompany(){
