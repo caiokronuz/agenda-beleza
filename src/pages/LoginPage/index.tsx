@@ -1,17 +1,18 @@
 import React from 'react';
 
-import {View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Image} from 'react-native';
 
 import styles from './styles';
+
+
+import logoImg from '../../assets/images/logo.png'
 
 function LoginPage(){
     return(
         <KeyboardAvoidingView style={styles.container}>
 
             <View style={styles.logo}>
-                <Text style={styles.title}>
-                    Agenda Beleza
-                </Text>
+                <Image source={logoImg} style={styles.logoimg}/>
             </View>
 
 
