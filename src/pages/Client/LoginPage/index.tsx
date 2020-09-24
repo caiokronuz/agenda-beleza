@@ -1,3 +1,4 @@
+import { RectButton } from 'react-native-gesture-handler';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native'
 
@@ -13,6 +14,10 @@ function LoginPage(){
 
     function handleNavigatetoResetPage(){
         navigate('ResetPassPage')
+    }
+
+    function handleNavigatetoClientPages(){
+        navigate('ClientTabs')
     }
 
     return(
@@ -39,9 +44,9 @@ function LoginPage(){
                     onChange={()=> {}}
                 />
 
-                <TouchableOpacity style = {styles.btn}>
+                <RectButton style = {styles.btn} onPress={handleNavigatetoClientPages}>
                     <Text style = {styles.btnText}>Acessar</Text>
-                </TouchableOpacity>
+                </RectButton>
 
                 <View>
                     <TouchableOpacity onPress={handleNavigatetoResetPage}>
