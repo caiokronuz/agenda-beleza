@@ -1,28 +1,24 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
+    container:{
         flex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#ffdb00'
+        justifyContent: 'center',
+        backgroundColor:'#ffdb00',
     },
-
-    logo: {
+    logo:{
         marginTop: '18%',
     },
-
-    logoImg: {
+    logoImage:{
         width: 300,
-        height: 70,
+        height: 70
     },
-
     textCenter:{
         textAlign: 'center',
-        fontSize: 18,
-        marginBottom: 10,
+        fontSize: 23,
+        marginBottom: 10
     },
-
     sview:{
         flex: 1,
         width: '80%',
@@ -30,7 +26,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderRadius: 5,
     },
-
     saloes:{
         backgroundColor: '#000',
         width: '90%',
@@ -39,17 +34,11 @@ const styles = StyleSheet.create({
         padding: '5%', 
         marginLeft: 13   
     },
-
     saloonTitle: {
         color: '#fff',
         fontWeight: 'bold',
         textAlign: 'center',
     },
-
-    saloonText: {
-        color: '#fff',  
-        textAlign: 'center',
-    }
-})
+});
 
 export default styles;
