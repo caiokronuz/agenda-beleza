@@ -1,11 +1,18 @@
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 import React from 'react';
 import { Image, Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles'
 import logoImg from '../../../assets/images/logo.png';
 
 function InitialPage(){
+    const {navigate} = useNavigation();
+
+    function handleNavigatetoCompanyPage(){
+        navigate('CompanyPage');
+    }
+
     return(
         <View style={styles.container}>
 
@@ -15,82 +22,13 @@ function InitialPage(){
             </View>
 
             <ScrollView style={styles.sview}>
-                <RectButton style={styles.saloes}>
+                <RectButton style={styles.saloes} onPress={handleNavigatetoCompanyPage}>
                     <Text style={styles.saloonTitle}>Salão De Beleza</Text>
                     <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
                     <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
                 </RectButton>
 
-                <RectButton style={styles.saloes}>
-                    <Text style={styles.saloonTitle}>Salão De Beleza</Text>
-                    <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
-                    <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
-                </RectButton>
-
-                <RectButton style={styles.saloes}>
-                    <Text style={styles.saloonTitle}>Salão De Beleza</Text>
-                    <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
-                    <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
-                </RectButton>
-
-                <RectButton style={styles.saloes}>
-                    <Text style={styles.saloonTitle}>Salão De Beleza</Text>
-                    <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
-                    <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
-                </RectButton>
-
-                <RectButton style={styles.saloes}>
-                    <Text style={styles.saloonTitle}>Salão De Beleza</Text>
-                    <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
-                    <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
-                </RectButton>
-
-                <RectButton style={styles.saloes}>
-                    <Text style={styles.saloonTitle}>Salão De Beleza</Text>
-                    <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
-                    <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
-                </RectButton>
-
-                <RectButton style={styles.saloes}>
-                    <Text style={styles.saloonTitle}>Salão De Beleza</Text>
-                    <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
-                    <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
-                </RectButton>
-                <RectButton style={styles.saloes}>
-                    <Text style={styles.saloonTitle}>Salão De Beleza</Text>
-                    <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
-                    <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
-                </RectButton>
-
-                <RectButton style={styles.saloes}>
-                    <Text style={styles.saloonTitle}>Salão De Beleza</Text>
-                    <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
-                    <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
-                </RectButton>
-
-                <RectButton style={styles.saloes}>
-                    <Text style={styles.saloonTitle}>Salão De Beleza</Text>
-                    <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
-                    <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
-                </RectButton>
-
-                <RectButton style={styles.saloes}>
-                    <Text style={styles.saloonTitle}>Salão De Beleza</Text>
-                    <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
-                    <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
-                </RectButton>
-
-                <RectButton style={styles.saloes}>
-                    <Text style={styles.saloonTitle}>Salão De Beleza</Text>
-                    <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
-                    <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
-                </RectButton>
-
-                <RectButton style={styles.saloes}>
-                    <Text style={styles.saloonTitle}>Salão De Beleza</Text>
-                    <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
-                    <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
-                </RectButton>
+            
                 
             </ScrollView>
 

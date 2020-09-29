@@ -15,6 +15,10 @@ function LoginCompany(){
         navigate('ResetPassPage')
     }
 
+    function handleNavigatetoCompanyTabs(){
+        navigate('CompanyTabs')
+    }
+
     return(
         <KeyboardAvoidingView style={styles.container}>
 
@@ -40,7 +44,7 @@ function LoginCompany(){
                     onChange={()=> {}}
                 />
 
-                <TouchableOpacity style = {styles.btn}>
+                <TouchableOpacity style = {styles.btn} onPress={handleNavigatetoCompanyTabs}>
                     <Text style = {styles.btnText}>Acessar</Text>
                 </TouchableOpacity>
 

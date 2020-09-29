@@ -10,6 +10,8 @@ import RegisterPage from '../pages/Client/RegisterPage';
 import RegisterPageCompany from '../pages/Company/RegisterPageCompany';
 import ResetPassPage from '../pages/Client/ResetPassPage';
 import ClientTabs from './ClientTabs';
+import CompanyPage from '../pages/Client/CompanyPage';
+import CompanyTabs from './CompanyTabs';
 
 
 const {Navigator, Screen} = createStackNavigator();
@@ -26,6 +28,8 @@ function AppStack(){
                 <Screen name="RegisterCompany" component={RegisterPageCompany} />
                 <Screen name="ResetPassPage" component={ResetPassPage} />
                 <Screen name="ClientTabs" component={ClientTabs} />
+                <Screen name="CompanyPage" component={CompanyPage} />
+                <Screen name="CompanyTabs" component={CompanyTabs} />
             </Navigator>
         </NavigationContainer>
     )
