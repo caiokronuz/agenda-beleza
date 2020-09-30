@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         backgroundColor: '#fff',
         borderRadius: 5,
+        borderColor: '#000',
+        borderWidth: 5
     },
 
     saloes:{

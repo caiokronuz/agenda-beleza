@@ -2,6 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import SchedulePageCompany from '../pages/Company/SchedulePageCompany';
+import InitialPageCompany from '../pages/Company/InitialPageCompany'; 
 
 const Tab = createBottomTabNavigator();
 
@@ -20,9 +21,9 @@ function CompanyTabs(){
         >
             <Tab.Screen 
                 name="Initial" 
-                component={SchedulePageCompany} 
+                component={InitialPageCompany} 
                 options={{
-                    tabBarLabel: 'Página Inicial',
+                    tabBarLabel: 'Registro de Horarios',
                 }}    
             />
 

@@ -18,15 +18,11 @@ function CompanyPage(){
                 <ScrollView style={styles.scView}>
                     <Text style={styles.textBold}>Horarios disponíveis: </Text>
 
-                    <Picker
-                        style={styles.picker}
-                    >
+                    <Picker style={styles.picker}>
                         <Picker.Item label="Selecione um dia da semana" value=""/>
                     </Picker>
 
-                    <Picker
-                        style={styles.picker} 
-                    >
+                    <Picker style={styles.picker} >
                         <Picker.Item label="Selecione um horario" value=""/>
                     </Picker>
 
