@@ -62,14 +62,14 @@ function PerfilPage() {
     }
 
     return (
-        <ScrollView style={styles.container}>
+        <KeyboardAvoidingView style={styles.container}>
 
             <View style = {styles.logo}> 
                 <Image style = {styles.imageLogo} source={logoImg}/>
                 <Text style = {styles.logoPerfil}>Perfil</Text>
             </View>
 
-            <KeyboardAvoidingView style={styles.perfil}>
+            <ScrollView style={styles.perfil}>
 
                         <KeyboardAvoidingView style = {styles.inview}>
                             <Text style = {styles.nameView}>Nome:</Text>
@@ -132,9 +132,9 @@ function PerfilPage() {
                         <TouchableOpacity style = {styles.btn} onPress={exit}>
                             <Text style = {styles.btnText}>Deslogar</Text>
                         </TouchableOpacity>
-            </KeyboardAvoidingView>
+            </ScrollView>
         
-    </ScrollView>
+    </KeyboardAvoidingView>
 )
 }
 

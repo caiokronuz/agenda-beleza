@@ -4,7 +4,7 @@ import { RectButton} from 'react-native-gesture-handler';
 import logoImg from '../../../assets/images/logo.png';
 import styles from './styles';
 
-function ScheduleCompnay(){
+function InitialPageCompany(){
     return(
         <KeyboardAvoidingView style={styles.container}>
 
@@ -39,4 +39,4 @@ function ScheduleCompnay(){
     );
 }
 
-export default ScheduleCompnay;
+export default InitialPageCompany;
