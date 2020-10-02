@@ -1,9 +1,8 @@
-import { RectButton } from 'react-native-gesture-handler';
 import React, { useState } from 'react'
 
 import api from '../../../services/api'
 
-import {View, Text, TextInput, KeyboardAvoidingView, Image} from 'react-native';
+import {View, Text, TextInput, KeyboardAvoidingView, Image, Alert, TouchableOpacity} from 'react-native';
 import Logo from '../../../assets/images/logo.png';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
@@ -28,6 +27,8 @@ function RegisterPage(){
 
         if(response.data.id){
             navigate('LoginPage')
+        }else{
+            Alert.alert("Erro", "Erro no registro, verifique os dados e tente novamente.")
         }
     }
 
@@ -74,9 +75,9 @@ function RegisterPage(){
                     onChangeText={text => setData(text)}
                 />
 
-                <RectButton style = {styles.btn} onPress={handleSubmitRegister}>
+                <TouchableOpacity style = {styles.btn} onPress={handleSubmitRegister}>
                     <Text style = {styles.btnText}>Cadastrar</Text>
-                </RectButton>
+                </TouchableOpacity>
             </View>
 
         </KeyboardAvoidingView>

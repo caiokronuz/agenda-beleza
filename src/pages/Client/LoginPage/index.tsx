@@ -1,8 +1,9 @@
 import { RectButton } from 'react-native-gesture-handler';
 import React, { useState } from 'react';
 import {useNavigation} from '@react-navigation/native'
+import AsyncStorage from '@react-native-community/async-storage';
 
-import {View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Image} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Image, Keyboard, Alert} from 'react-native';
 
 import styles from './styles';
 
@@ -27,7 +28,12 @@ function LoginPage(){
         })
 
         if(response.data.id){
+            const id = response.data.id;
+            await AsyncStorage.setItem("token", JSON.stringify(id))
             navigate('ClientTabs')
+            Keyboard.dismiss();
+        }else{
+            Alert.alert("Erro", "Usuário ou senha incorretos, verifique os dados e tente novamente.")
         }
     }
 

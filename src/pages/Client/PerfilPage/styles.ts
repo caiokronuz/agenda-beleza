@@ -2,7 +2,6 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create ({
     container: {
-        flex: 13,
         backgroundColor: '#ffdb00',
         alignItems: 'center',
         alignContent: 'center',
@@ -29,7 +28,6 @@ const styles = StyleSheet.create ({
 
    inview: {
     flex: 1,
-    display: 'flex',
     alignItems:"center"
    },
 
@@ -62,7 +60,6 @@ const styles = StyleSheet.create ({
 
    input: {
     flex:1,
-    display: "flex",
     alignItems: "center",
    },
 
@@ -95,7 +92,6 @@ const styles = StyleSheet.create ({
 
    btn: {
     flex:1,
-    display: 'flex',
     alignItems: 'center'
    },
 

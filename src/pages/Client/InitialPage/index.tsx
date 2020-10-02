@@ -1,6 +1,6 @@
-import { RectButton, ScrollView } from 'react-native-gesture-handler';
+import { RectButton, ScrollView} from 'react-native-gesture-handler';
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Text, View, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles'
@@ -27,9 +27,6 @@ function InitialPage(){
                     <Text style={styles.saloonText}>Rua Maria dos Pepeto</Text>
                     <Text style={styles.saloonText}>Horario disponível? Sim!</Text>
                 </RectButton>
-
-            
-                
             </ScrollView>
 
         </View>
