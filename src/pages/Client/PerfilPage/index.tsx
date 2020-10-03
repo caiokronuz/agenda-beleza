@@ -22,21 +22,20 @@ function PerfilPage() {
 
 
     useEffect(() => {
-        AsyncStorage.getItem("token")
-            .then((response) => {
-                const id = response
-                api.get(`/clients/${id}`)
-                    .then((response) => {
-                        const {data} = response;
-                        setId(data.id);
-                        setName(data.name);
-                        setEmail(data.email);
-                        setPass(data.pass);
-                        setTel(data.telefone);
-                        setDate(data.data);
-                    })
-            })
+        load();
     }, [])
+
+    async function load(){
+        const id = await AsyncStorage.getItem("token");
+        const response = await api.get(`/clients/${id}`)
+        const {data} = response;
+        setId(data.id);
+        setName(data.name);
+        setEmail(data.email);
+        setPass(data.pass);
+        setTel(data.telefone);
+        setDate(data.data);
+    }
 
     async function update(){
         const response = await api.put(`/clients/${id}`, {
@@ -107,6 +106,7 @@ function PerfilPage() {
                             <Text style = {styles.yeahInput}>Senha:</Text>
                             <TextInput
                             style = {styles.pass}
+                            secureTextEntry={true}
                             value = {pass}
                             editable={true}
                             autoCorrect={false}

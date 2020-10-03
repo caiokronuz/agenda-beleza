@@ -57,6 +57,7 @@ function LoginPage(){
                 <TextInput 
                     style = {styles.input}  
                     placeholder="Senha"
+                    secureTextEntry={true}
                     autoCorrect={false}
                     onChangeText={text=> setPass(text)}
                 />

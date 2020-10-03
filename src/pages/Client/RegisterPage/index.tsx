@@ -26,10 +26,14 @@ function RegisterPage(){
         })
 
         if(response.data.id){
+            Alert.alert("Sucesso", "Cadastro realizado com sucesso!")
             navigate('LoginPage')
-        }else{
+        }
+
+        if(response.data.err){
             Alert.alert("Erro", "Erro no registro, verifique os dados e tente novamente.")
         }
+
     }
 
     return(
@@ -57,6 +61,7 @@ function RegisterPage(){
                 <TextInput 
                     style = {styles.input}
                     placeholder = "Senha"
+                    secureTextEntry={true}
                     autoCorrect={false}
                     onChangeText={text => setPass(text)}
                 />
@@ -70,7 +75,7 @@ function RegisterPage(){
 
                 <TextInput 
                     style = {styles.input}
-                    placeholder = "Data de Nascimento"
+                    placeholder = "Data de Nascimento DD/MM/AAAA"
                     autoCorrect={false}
                     onChangeText={text => setData(text)}
                 />
