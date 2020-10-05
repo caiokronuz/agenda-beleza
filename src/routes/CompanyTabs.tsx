@@ -2,7 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import SchedulePageCompany from '../pages/Company/SchedulePageCompany';
-import InitialPageCompany from '../pages/Company/InitialPageCompany'; 
+import InitialPageCompany from '../pages/Company/InitialPageCompany';
+import PerfilPageCompany from '../pages/Company/PerfilPageCompany'; 
 
 const Tab = createBottomTabNavigator();
 
@@ -33,6 +34,14 @@ function CompanyTabs(){
                 options={{
                     tabBarLabel: 'Agenda de Horarios',
                 }}    
+            />
+
+            <Tab.Screen
+                name="Perfil"
+                component={PerfilPageCompany}
+                options={{
+                    tabBarLabel: 'Perfil'
+                }}
             />
             
         </Tab.Navigator>
