@@ -1,22 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native'
 
-import {View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Image} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView, Image, Alert, Keyboard} from 'react-native';
 
 import styles from './styles';
 
 
 import logoImg from '../../../assets/images/logo.png'
+import api from '../../../services/api';
+import AsyncStorage from '@react-native-community/async-storage';
 
 function LoginCompany(){
     const {navigate} = useNavigation();
 
-    function handleNavigatetoResetPage(){
-        navigate('ResetPassPage')
+    const [email, setEmail] = useState('')
+    const [pass, setPass] = useState('')
+
+    async function login(){
+        const response = await api.post('/company/login', {
+            "email": email,
+            "pass": pass
+        })
+        
+        const id = response.data.id;
+        if(response.data.id){
+            await AsyncStorage.setItem("token", JSON.stringify(id))
+            navigate("CompanyTabs")
+            Keyboard.dismiss();
+        }else{
+            Alert.alert("Error", "Email ou senha incorretos.")
+        }
     }
 
-    function handleNavigatetoCompanyTabs(){
-        navigate('CompanyTabs')
+    function handleNavigatetoResetPage(){
+        navigate('ResetPassPage')
     }
 
     return(
@@ -34,17 +51,18 @@ function LoginCompany(){
                     style = {styles.input}
                     placeholder="Email"
                     autoCorrect={false}
-                    onChange={()=> {}}
+                    onChangeText={text=> setEmail(text)}
                 />
 
                 <TextInput 
                     style = {styles.input}  
                     placeholder="Senha"
+                    secureTextEntry={true}
                     autoCorrect={false}
-                    onChange={()=> {}}
+                    onChangeText={text=> setPass(text)}
                 />
 
-                <TouchableOpacity style = {styles.btn} onPress={handleNavigatetoCompanyTabs}>
+                <TouchableOpacity style = {styles.btn} onPress={login}>
                     <Text style = {styles.btnText}>Acessar</Text>
                 </TouchableOpacity>
 
