@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 
-import {View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView,Image, Alert} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView,Image, Alert, } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Logo from '../../../assets/images/logo.png'
+import salaoImage from '../../../assets/images/salaoImageLittle.png'
 import api from '../../../services/api';
 import styles from './styles';
 
@@ -34,15 +35,11 @@ function RegisterPageCompany(){
             Alert.alert("Erro", "Erro ao registrar, verifique os dados e tente novamente")
         }
     }
-
-
+    
     return(
         <KeyboardAvoidingView style={styles.container}>
-     
-            <View style = {styles.logo}> 
-                <Image style = {styles.imageLogo} source={Logo}/>
-                <Text style = {styles.text} >Cadastre seu salão!</Text>
-            </View>
+
+            <Text style = {styles.firstText}>Cadastre seu Salão</Text>
 
             <View style={styles.Registrar}>
                 <TextInput
@@ -91,6 +88,15 @@ function RegisterPageCompany(){
                 <TouchableOpacity style = {styles.btn} onPress={register}>
                     <Text style = {styles.btnText}>Cadastrar</Text>
                 </TouchableOpacity>
+            </View>
+
+            <View style = {styles.logo}> 
+                <Image style = {styles.imageLogo} source={Logo}/>
+                <Text style = {styles.supportText}>Para caso de duvidas: agendabeleza@gmail.com</Text>
+            </View>
+
+            <View style = {styles.logoSalao}> 
+                <Image style = {styles.imageSalao} source={salaoImage}/>
             </View>
 
         </KeyboardAvoidingView>

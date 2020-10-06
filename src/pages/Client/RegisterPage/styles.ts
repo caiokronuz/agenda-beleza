@@ -8,13 +8,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 
-    imageLogo: {
-        width: 300,
-        height: 70,
-
-    },
-    logo: {
-        marginTop: '18%'
+    firstText: {
+        textAlign: 'center',
+        fontSize: 20,
+        marginTop: 50,
     },
     
     title: {
@@ -24,9 +21,9 @@ const styles = StyleSheet.create({
 
     Registrar: {
         flex:1,
-        alignItems:'center',
-        justifyContent:'center',
-        width:'90%',
+        marginTop: 30,
+        width: '90%',
+        alignItems: 'center'
     },
 
     input:{
@@ -51,6 +48,34 @@ const styles = StyleSheet.create({
     btnText: {
         color: '#fff',
         fontSize: 18,
+    },
+
+    logo: {
+        marginTop: '50%',
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+
+    
+    imageLogo: {
+        width: 200,
+        height: 45,
+    },
+
+    supportText: {
+        textAlign: 'center',
+        fontSize: 15,
+    },
+
+    logoSalao: {
+        alignItems: 'center',
+    },
+
+    imageSalao: {
+        width: 60,
+        height: 70,
+        marginBottom: 20,
+        marginTop: 50
     },
 })
 export default styles

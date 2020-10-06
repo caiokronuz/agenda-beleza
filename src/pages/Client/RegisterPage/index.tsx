@@ -6,6 +6,7 @@ import {View, Text, TextInput, KeyboardAvoidingView, Image, Alert, TouchableOpac
 import Logo from '../../../assets/images/logo.png';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
+import salaoImage from '../../../assets/images/salaoImageLittle.png'
 
 function RegisterPage(){
     const {navigate} = useNavigation();
@@ -39,9 +40,7 @@ function RegisterPage(){
     return(
         <KeyboardAvoidingView style={styles.container}>
 
-            <View style = {styles.logo}> 
-                <Image style = {styles.imageLogo} source={Logo}/>
-            </View>
+            <Text style = {styles.firstText}>Se cadastre para conferir os salões!</Text>
 
             <View style={styles.Registrar}>
                 <TextInput
@@ -85,6 +84,14 @@ function RegisterPage(){
                 </TouchableOpacity>
             </View>
 
+            <View style = {styles.logo}> 
+                <Image style = {styles.imageLogo} source={Logo}/>
+                <Text style = {styles.supportText}>Para caso de duvidas: agendabeleza@gmail.com</Text>
+            </View>
+
+            <View style = {styles.logoSalao}> 
+                <Image style = {styles.imageSalao} source={salaoImage}/>
+            </View>
         </KeyboardAvoidingView>
     )
 }
