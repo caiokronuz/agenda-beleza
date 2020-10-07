@@ -1,6 +1,6 @@
-import { ScrollView} from 'react-native-gesture-handler';
+import { RectButton, ScrollView} from 'react-native-gesture-handler';
 import React, {useEffect, useState} from 'react';
-import { Image, Text, View } from 'react-native';
+import { Alert, Image, Text, View, Picker } from 'react-native';
 
 import styles from './styles'
 import logoImg from '../../../assets/images/logo.png';
@@ -18,11 +18,18 @@ function HoursPageCompany(){
     }
 
     const [data, setData] = useState([])
+    const [weekday, setweekday] = useState('');
 
     async function loadHours(){
         const id = await AsyncStorage.getItem("token_company")
         const response = await api.get(`/freehours/company/${id}`)
         setData(response.data)
+    }
+
+    async function deleteHours(id: number){
+        await api.delete(`/freehours/${id}`);
+        Alert.alert("Sucesso", "Horário deletado com sucesso!")
+        loadHours();
     }
 
     function weekname(n: number){
@@ -65,9 +72,10 @@ function HoursPageCompany(){
 
             <ScrollView style={styles.sview}>
                 {data.map((h: FreeHour) => (
-                    <View style={styles.saloes} key={h.id_hours}>
+                    <View style={styles.saloes} key={h.id_hours}> 
                         <Text style={styles.saloonTitle}>{weekname(h.week_day)}</Text>
                         <Text style={styles.saloonText}>{h.from_hour} - {h.to_hour}</Text>
+                        <RectButton style={styles.buttonDel} onPress={() => {deleteHours(h.id_hours)}}><Text style={styles.buttonText}>Deletar</Text></RectButton>
                     </View>
                 ))}
             </ScrollView>
