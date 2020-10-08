@@ -1,6 +1,6 @@
 import { RectButton, ScrollView } from 'react-native-gesture-handler';
 import React, {useEffect, useState} from 'react';
-import { Image, Text, View, Picker } from 'react-native';
+import { Image, Text, View, Picker, Alert } from 'react-native';
 
 import logoImg from '../../../assets/images/logo.png';
 import imageLogo from '../../../assets/images/salaoImageLittle.png'
@@ -46,6 +46,32 @@ function CompanyPage(){
         const id = await AsyncStorage.getItem("id_company")
         const response = await api.get(`/freehours/company/${id}`)
         setData(response.data)
+    }
+
+    async function createReservedHour(){
+        const id_company = await AsyncStorage.getItem("id_company");
+        const id_client = await AsyncStorage.getItem("token");
+        const response = await api.get(`/freehours/${idHour}`)
+        const company = await api.get(`/company/${id_company}`)
+        const name_company = company.data.name;
+        const from_hour = response.data.from_hour;
+        const to_hour = response.data.to_hour;
+        const week_day = response.data.week_day;
+        const create = await api.post(`/reservedhours/`, {
+            "id_company": id_company,
+            "name_company": name_company,
+            "id_client": id_client,
+            "from_hour": from_hour,
+            "to_hour": to_hour,
+            "week_day": week_day
+        })
+
+        if(create.data.id){
+            Alert.alert("Sucesso", "Horário reservado com sucesso!")
+            await api.delete(`/freehours/${idHour}`)
+        }else{
+            Alert.alert("Erro", "Impossível reservar um horário. Tente novamente mais tarde!")
+        }
     }
 
     function weekname(n: number){
@@ -102,7 +128,7 @@ function CompanyPage(){
                     </View>
                 </View>
 
-                <RectButton style={styles.button}>
+                <RectButton style={styles.button} onPress={createReservedHour}>
                     <Text style={styles.textButton}>Confirmar</Text>
                 </RectButton>
                 

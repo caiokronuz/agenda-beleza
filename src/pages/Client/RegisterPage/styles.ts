@@ -23,7 +23,10 @@ const styles = StyleSheet.create({
         flex:1,
         marginTop: 30,
         width: '90%',
-        alignItems: 'center'
+    },
+
+    allInput:{
+        alignItems:"center"
     },
 
     input:{
@@ -51,9 +54,8 @@ const styles = StyleSheet.create({
     },
 
     logo: {
-        marginTop: '50%',
+        marginTop: '6%',
         alignItems: 'center',
-        marginBottom: 10,
     },
 
     
@@ -74,8 +76,7 @@ const styles = StyleSheet.create({
     imageSalao: {
         width: 60,
         height: 70,
-        marginBottom: 20,
-        marginTop: 50
+        marginTop: 45
     },
 })
 export default styles

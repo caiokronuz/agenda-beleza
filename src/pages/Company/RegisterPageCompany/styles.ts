@@ -18,21 +18,24 @@ const styles = StyleSheet.create({
         marginTop: 20,
         flex:1,
         width: '90%',
-        alignItems: 'center'
     },
 
     text:{
         textAlign:'center',
     },
 
+    allInput:{
+        alignItems: 'center'
+    },
+
     input:{
         backgroundColor: '#fff',
         width:'90%',
         height: 45,
-        marginBottom:15,
         color: '#222',
         fontSize: 17,
         borderRadius: 7,
+        marginBottom: 15
     },
 
     btn:{
@@ -42,6 +45,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 7,
+        marginBottom: 7
 
     },
     btnText: {
@@ -50,8 +54,8 @@ const styles = StyleSheet.create({
     },
 
     logo: {
-        marginTop: '50%',
         alignItems: 'center',
+        marginTop: '6%'
     },
 
     
@@ -72,8 +76,7 @@ const styles = StyleSheet.create({
     imageSalao: {
         width: 50,
         height: 60,
-        marginBottom: 10,
-        marginTop: 50
+        marginTop: 37,
     },
 
 
