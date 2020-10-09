@@ -49,18 +49,30 @@ function CompanyPage(){
     }
 
     async function createReservedHour(){
+
+        //Request async storage
         const id_company = await AsyncStorage.getItem("id_company");
         const id_client = await AsyncStorage.getItem("token");
+
+        //Requests
+        const client = await api.get(`/clients/${id_client}`)
         const response = await api.get(`/freehours/${idHour}`)
         const company = await api.get(`/company/${id_company}`)
+
+        //Dados
         const name_company = company.data.name;
+        const name_client = client.data.name;
+        const telefone_client = client.data.telefone;
         const from_hour = response.data.from_hour;
         const to_hour = response.data.to_hour;
         const week_day = response.data.week_day;
+
         const create = await api.post(`/reservedhours/`, {
             "id_company": id_company,
             "name_company": name_company,
             "id_client": id_client,
+            "name_client": name_client,
+            "telefone_client": telefone_client,
             "from_hour": from_hour,
             "to_hour": to_hour,
             "week_day": week_day
@@ -76,25 +88,25 @@ function CompanyPage(){
 
     function weekname(n: number){
         switch(n){
-            case 0:
+            case 1:
                 return "Domingo"
                 break;
-            case 1:
+            case 2:
                 return "Segunda-feira"
                 break;
-            case 2: 
+            case 3: 
                 return "Terça-feira"
                 break;
-            case 3:
+            case 4:
                 return "Quarta-feira"
                 break;
-            case 4:
+            case 5:
                 return "Quinta-feira"
                 break;
-            case 5:
+            case 6:
                 return "Sexta-feira"
                 break;
-            case 6:
+            case 7:
                 return "Sabado"
                 
         }
@@ -116,7 +128,7 @@ function CompanyPage(){
 
                     <View style={styles.pickerView}>
                         <Picker selectedValue={idHour} onValueChange={(h) => {setIdHour(h)}}>
-                            <Picker.Item label="Selecione um horario" value={0}/>
+                            <Picker.Item label="Selecione um horario" value={""}/>
                             {data.map((t: FreeHour) => (
                                 <Picker.Item key={t.id_hours} label={`${weekname(t.week_day)}: ${t.from_hour} - ${t.to_hour}`} value={t.id_hours}/>
                             ))}

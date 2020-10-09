@@ -1,6 +1,6 @@
 import { RectButton, ScrollView} from 'react-native-gesture-handler';
 import React, {useEffect, useState} from 'react';
-import { Alert, Image, Text, View, Picker } from 'react-native';
+import { Alert, Image, Text, View, Picker, TouchableOpacity } from 'react-native';
 
 import styles from './styles'
 import logoImg from '../../../assets/images/logo.png';
@@ -34,25 +34,25 @@ function HoursPageCompany(){
 
     function weekname(n: number){
         switch(n){
-            case 0:
+            case 1:
                 return "Domingo"
                 break;
-            case 1:
+            case 2:
                 return "Segunda-feira"
                 break;
-            case 2: 
+            case 3: 
                 return "Terça-feira"
                 break;
-            case 3:
+            case 4:
                 return "Quarta-feira"
                 break;
-            case 4:
+            case 5:
                 return "Quinta-feira"
                 break;
-            case 5:
+            case 6:
                 return "Sexta-feira"
                 break;
-            case 6:
+            case 7:
                 return "Sabado"
                 
         }
@@ -69,6 +69,10 @@ function HoursPageCompany(){
                 <Image source={logoImg} style={styles.logoImg}/>
                 <Text style={styles.textCenter}>Horários cadastrados</Text>
             </View>
+
+            <TouchableOpacity onPress={loadHours}>
+                <Text>Clique aqui para atualizar a página!</Text>
+            </TouchableOpacity>
 
             <ScrollView style={styles.sview}>
                 {data.map((h: FreeHour) => (

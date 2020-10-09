@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import React, {useState} from 'react';
-import { KeyboardAvoidingView, View, Image, Text, Picker, Alert } from 'react-native';
+import { KeyboardAvoidingView, View, Image, Text, Picker, Alert, Keyboard } from 'react-native';
 import { RectButton, TextInput} from 'react-native-gesture-handler';
 import logoImg from '../../../assets/images/logo.png';
 import styles from './styles';
@@ -24,6 +24,7 @@ function InitialPageCompany(){
 
         if(response){
             Alert.alert("Sucesso", "Cadastro realizado com sucesso!")
+            Keyboard.dismiss();
         }else{  
             Alert.alert("Erro", "Erro ao cadastrar o horário, verifique os dados e tente novamente")
         }
@@ -40,13 +41,13 @@ function InitialPageCompany(){
             <View style={styles.pickerView}>
                  <Picker selectedValue={weekday}  onValueChange={(t) => {setWeekDay(t)}}>
                     <Picker.Item label={"Dia da Semana"} value={""}/>
-                    <Picker.Item label={"Domingo"} value={0}/>
-                    <Picker.Item label={"Segunda-feira"} value={1}/>
-                    <Picker.Item label={"Terça-feira"} value={2}/>
-                    <Picker.Item label={"Quarta-feira"} value={3}/>
-                    <Picker.Item label={"Quinta-feira"} value={4}/>
-                    <Picker.Item label={"Sexta-feira"} value={5}/>
-                    <Picker.Item label={"Sabado"} value={6}/>
+                    <Picker.Item label={"Domingo"} value={1}/>
+                    <Picker.Item label={"Segunda-feira"} value={2}/>
+                    <Picker.Item label={"Terça-feira"} value={3}/>
+                    <Picker.Item label={"Quarta-feira"} value={4}/>
+                    <Picker.Item label={"Quinta-feira"} value={5}/>
+                    <Picker.Item label={"Sexta-feira"} value={6}/>
+                    <Picker.Item label={"Sabado"} value={7}/>
                 </Picker>
 
             </View>

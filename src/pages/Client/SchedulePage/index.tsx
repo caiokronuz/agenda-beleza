@@ -1,5 +1,5 @@
-import {ScrollView} from 'react-native-gesture-handler';
-import React, { useLayoutEffect, useState } from 'react';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
+import React, { useEffect, useState } from 'react';
 import { Text, View, Image } from 'react-native';
 import styles from './styles';
 import logoImage from '../../../assets/images/logo.png';
@@ -9,10 +9,12 @@ import AsyncStorage from '@react-native-community/async-storage';
 function SchedulePage(){
 
     type ReservedHours = {
-        id_rhour: number,
+        id_rhours: number,
         id_company: number,
         name_company: string,
         id_client: number,
+        name_client: string,
+        telefone_client: string,
         from_hour: string,
         to_hour: string,
         week_day: number,
@@ -26,7 +28,7 @@ function SchedulePage(){
         setData(response.data)
     }
     
-    useLayoutEffect(() => {
+    useEffect(() => {
         getReservedHours();
     }, [])
 
@@ -64,9 +66,13 @@ function SchedulePage(){
             <Text style={styles.textCenter}>Agenda</Text>
         </View>
 
+        <TouchableOpacity onPress={getReservedHours}>
+            <Text>Clique aqui para atualizar a página!</Text>
+        </TouchableOpacity>
+
         <ScrollView style={styles.sview}>
                 {data.map((h: ReservedHours) => (
-                    <View key={h.id_rhour} style={styles.saloes}>
+                    <View key={h.id_rhours} style={styles.saloes}>
                         <Text style={styles.saloonTitle}>{h.name_company}</Text>
                         <Text style={styles.saloonTitle}>{weekname(h.week_day)}</Text>
                         <Text style={styles.saloonTitle}>{h.from_hour} - {h.to_hour}</Text>
