@@ -12,6 +12,10 @@ const styles = StyleSheet.create({
         marginTop: '18%',
     },
 
+    textLogo:{
+        textAlign: 'center',
+    },
+
     logoimg:{
         width: 300,
         height: 70

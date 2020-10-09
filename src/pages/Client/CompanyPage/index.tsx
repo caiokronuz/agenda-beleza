@@ -114,36 +114,41 @@ function CompanyPage(){
 
     return(
         <View style={styles.container}>
-            <View style={styles.logoView}>
-                <Image source={logoImg} style={styles.logoImg}/>
-            </View>
+            <ScrollView>
 
-                <Text style={styles.textBold}>{name}</Text>
-                <Text style={styles.text}>{endereco}</Text>
-                <Text style={styles.text}>{email}</Text>
-                <Text style={styles.text}>{tel}</Text>
+                <View style={styles.allInput}>
+                    <View style={styles.logoView}>
+                        <Image source={logoImg} style={styles.logoImg}/>
+                     </View>
 
-                <View style={styles.scView}>
-                    <Text style={styles.textBold}>Horarios disponíveis: </Text>
+                    <Text style={styles.textBold}>{name}</Text>
+                    <Text style={styles.text}>{endereco}</Text>
+                    <Text style={styles.text}>{email}</Text>
+                    <Text style={styles.text}>{tel}</Text>
 
-                    <View style={styles.pickerView}>
-                        <Picker selectedValue={idHour} onValueChange={(h) => {setIdHour(h)}}>
-                            <Picker.Item label="Selecione um horario" value={""}/>
-                            {data.map((t: FreeHour) => (
-                                <Picker.Item key={t.id_hours} label={`${weekname(t.week_day)}: ${t.from_hour} - ${t.to_hour}`} value={t.id_hours}/>
-                            ))}
-                        </Picker>
+                    <View style={styles.scView}>
+                        <Text style={styles.textBold}>Horarios disponíveis: </Text>
+
+                        <View style={styles.pickerView}>
+                            <Picker selectedValue={idHour} onValueChange={(h) => {setIdHour(h)}}>
+                                <Picker.Item label="Selecione um horario" value={""}/>
+                                {data.map((t: FreeHour) => (
+                                    <Picker.Item key={t.id_hours} label={`${weekname(t.week_day)}: ${t.from_hour} - ${t.to_hour}`} value={t.id_hours}/>
+                                ))}
+                            </Picker>
+                        </View>
+
+                        <View style={styles.viewImageSalao}>
+                            <Image source={imageLogo} style={styles.imageSalao}/>
+                        </View>
                     </View>
 
-                    <View style={styles.viewImageSalao}>
-                        <Image source={imageLogo} style={styles.imageSalao}/>
-                    </View>
+                    <RectButton style={styles.button} onPress={createReservedHour}>
+                        <Text style={styles.textButton}>Confirmar</Text>
+                    </RectButton>
                 </View>
-
-                <RectButton style={styles.button} onPress={createReservedHour}>
-                    <Text style={styles.textButton}>Confirmar</Text>
-                </RectButton>
-                
+           
+            </ScrollView>       
         </View>
     );
 }

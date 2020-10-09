@@ -8,6 +8,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffdb00',
     },
 
+    allInput: {
+        alignItems: 'center'
+    },
+
     logoView: {
         marginTop: '18%',
     },
@@ -30,7 +34,7 @@ const styles = StyleSheet.create({
     },
 
     scView:{
-        width: '80%',
+        width: '95%',
         marginTop: '18%',
         marginBottom: 50,
     },

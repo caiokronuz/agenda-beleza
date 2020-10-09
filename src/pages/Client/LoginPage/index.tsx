@@ -42,6 +42,7 @@ function LoginPage(){
 
             <View style={styles.logo}>
                 <Image source={logoImg} style={styles.logoimg}/>
+                <Text style={styles.textLogo}>Logue-se para conhecer novos estilos!</Text>
             </View>
 
 
